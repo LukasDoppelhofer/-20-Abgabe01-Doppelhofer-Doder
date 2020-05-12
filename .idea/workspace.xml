@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4f1cf59-5e81-4010-ac5e-40c9bbd289e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhj/iit/Cocktail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhj/iit/Cocktail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhj/iit/Cocktail.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,18 +30,6 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="LiquidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -96,5 +84,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2763" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1589291528565">
+      <screen x="1920" y="34" width="1680" height="1050" />
+    </state>
+    <state x="2763" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.34.1680.1050@1920.34.1680.1050" timestamp="1589291528565" />
+    <state x="2459" y="34" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589291557282">
+      <screen x="1920" y="34" width="1680" height="1050" />
+    </state>
+    <state x="2459" y="34" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.34.1680.1050@1920.34.1680.1050" timestamp="1589291557282" />
   </component>
 </project>
