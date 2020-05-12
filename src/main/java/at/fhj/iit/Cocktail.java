@@ -35,9 +35,10 @@ public class Cocktail extends Drink{
      *
      * @param name name of the drink
      */
-    public Cocktail(String name, Color cocktailColor) {
+    public Cocktail(String name, Color cocktailColor,ArrayList<Liquid> liquidList) {
         super(name);
         this.cocktailColor = cocktailColor;
+        this.liquidList = liquidList;
         this.volume = calculateVolume();
         this.alcoholPercent = calculateAlcoholPercent();
     }
@@ -159,6 +160,8 @@ public class Cocktail extends Drink{
      */
     public void setLiquidList(ArrayList<Liquid> liquidList) {
         this.liquidList = liquidList;
+        this.volume = calculateVolume();
+        this.alcoholPercent = calculateAlcoholPercent();
     }
 
     /**
@@ -199,12 +202,6 @@ public class Cocktail extends Drink{
             return false;
         }
     }
-
-    /**
-     * converts the liquidList to a String
-     *
-     * @return String of all liquidList parameters
-     */
     public String listToString() {
         String text = "";
         for (Liquid l : liquidList) {
