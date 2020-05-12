@@ -36,6 +36,10 @@ public abstract class Drink {
      */
     public abstract boolean isAlcoholic();
 
+    /**
+     * Gives the name of a drink
+     * @return name of drink
+     */
     public String getName(){
         return name;
     }
