@@ -11,7 +11,7 @@ public class Cocktail extends Drink{
     /**
      * enum that represents the color of the cocktail
      */
-    private enum Color {
+    public enum Color {
         red, blue, green, yellow, clear
     }
     private Color cocktailColor;
@@ -34,11 +34,9 @@ public class Cocktail extends Drink{
      * Creates a Cocktail object with given name
      *
      * @param name name of the drink
-     * @param liquidList list of all liquids that are in the cocktail
      */
-    public Cocktail(String name, ArrayList<Liquid> liquidList, Color cocktailColor) {
+    public Cocktail(String name, Color cocktailColor) {
         super(name);
-        this.liquidList = liquidList;
         this.cocktailColor = cocktailColor;
         this.volume = calculateVolume();
         this.alcoholPercent = calculateAlcoholPercent();
@@ -67,9 +65,9 @@ public class Cocktail extends Drink{
      *
      * @throws IllegalArgumentException if sip is negative or if the sip is
      * bigger than the volume of the cocktail
-     * TODO: @throws  DisinfectantException
+     * @throws DisinfectantException if the user drinks disinfectant
      */
-    public void drink(double sip) throws IllegalArgumentException{
+    public void drink(double sip) throws IllegalArgumentException, DisinfectantException{
 
         if(sip == 0) {
             return;
@@ -82,7 +80,7 @@ public class Cocktail extends Drink{
         if (sip <= volume) {
 
             if(alcoholPercent > 90) {
-                //TODO: throw DisinfectantException
+                throw new DisinfectantException("User died!!! :(");
             }
 
             for (Liquid l :liquidList) {
@@ -109,6 +107,11 @@ public class Cocktail extends Drink{
      * out of the percentage bounds
      */
     private double calculateAlcoholPercent() throws IllegalArgumentException{
+
+        if (volume <= 0) {
+            return 0;
+        }
+
         double alcoholVolume = 0;
         for(Liquid l: liquidList) {
             double liquidAlcohol = l.getAlcoholPercent();
@@ -119,11 +122,7 @@ public class Cocktail extends Drink{
             alcoholVolume += l.getVolume() * liquidAlcohol / 100;
         }
 
-        if(volume > 0) {
-            return alcoholVolume/volume * 100;
-        } else {
-            return 0;
-        }
+        return alcoholVolume/volume * 100;
     }
 
     /**
