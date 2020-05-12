@@ -199,4 +199,17 @@ public class Cocktail extends Drink{
             return false;
         }
     }
+
+    /**
+     * converts the liquidList to a String
+     *
+     * @return String of all liquidList parameters
+     */
+    public String listToString() {
+        String text = "";
+        for (Liquid l : liquidList) {
+            text += l.getName() + l.getVolume() + l.getAlcoholPercent();
+        }
+        return text;
+    }
 }
