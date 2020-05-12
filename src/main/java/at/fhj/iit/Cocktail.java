@@ -54,7 +54,7 @@ public class Cocktail extends Drink{
         double volume = 0;
         for (Liquid l : liquidList) {
             if (l.getVolume() < 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Liquid " + liquidList.indexOf(l) + " has a negative volume!!!");
             }
             volume += l.getVolume();
         }
@@ -76,7 +76,7 @@ public class Cocktail extends Drink{
         }
 
         if (sip < 0){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("You cannot drink a negative amount!!!");
         }
 
         if (sip <= volume) {
@@ -94,7 +94,7 @@ public class Cocktail extends Drink{
             this.alcoholPercent = calculateAlcoholPercent();
 
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("You cannot drink more than what is in your cup!!! :-)");
         }
     }
 
@@ -113,7 +113,8 @@ public class Cocktail extends Drink{
         for(Liquid l: liquidList) {
             double liquidAlcohol = l.getAlcoholPercent();
             if(liquidAlcohol > 100 || liquidAlcohol < 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Liquid " + liquidList.indexOf(l) +
+                        " contains an invalid percentage of alcohol!!!");
             }
             alcoholVolume += l.getVolume() * liquidAlcohol / 100;
         }
