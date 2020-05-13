@@ -36,7 +36,7 @@ public class SimpleDrinkTest {
     }
 
     @Test
-    @DisplayName("Testing isAlcoholic() method")
+    @DisplayName("Testing isAlcoholic method")
     public void testIsAlcoholic(){
         assertEquals(sW.isAlcoholic(), false);
         assertEquals(sB.isAlcoholic(), true);
