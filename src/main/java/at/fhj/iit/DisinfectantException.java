@@ -5,13 +5,6 @@ This Exception is thrown when the user drinks from a drink with over 90% alcohol
 public class DisinfectantException extends Exception{
 
     /**
-     * Constructor without error message
-     */
-    public DisinfectantException(){
-        super();
-    }
-
-    /**
      * Constructor with a error message
      * @param errorMessage
      */
