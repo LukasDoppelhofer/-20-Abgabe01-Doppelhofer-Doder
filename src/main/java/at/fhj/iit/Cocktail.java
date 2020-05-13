@@ -68,29 +68,23 @@ public class Cocktail extends Drink{
      * @throws DisinfectantException if the user drinks disinfectant
      */
     public void drink(double sip) throws IllegalArgumentException, DisinfectantException{
-
         if(sip == 0) {
             return;
         }
-
         if (sip < 0){
             throw new IllegalArgumentException("You cannot drink a negative amount!!!");
         }
-
         if (sip <= volume) {
-
             if(alcoholPercent > 90) {
                 throw new DisinfectantException("User died!!! :(");
             }
-
-            for (Liquid l :liquidList) {
-                double vol = l.getVolume();
-                double diff = vol - (sip / liquidList.size());
+            for (Liquid l : liquidList) {
+                double per = sip / volume;
+                double diff = l.getVolume() *  (1 - per);
                 l.setVolume(diff);
             }
             this.volume = calculateVolume();
             this.alcoholPercent = calculateAlcoholPercent();
-
         } else {
             throw new IllegalArgumentException("You cannot drink more than what is in your cup!!! :-)");
         }
