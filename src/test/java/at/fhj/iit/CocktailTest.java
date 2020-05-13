@@ -15,7 +15,7 @@ public class CocktailTest {
     private ArrayList<Liquid> liquidList1, liquidList2, liquidList3;
 
     /**
-     * inits a cocktails and an ArrayList
+     * inits three cocktails and three ArrayLists
      */
     @Test
     @BeforeEach
@@ -41,9 +41,6 @@ public class CocktailTest {
     public void testConstructorAlcohol(){
         assertEquals(cocktail1.getCocktailColor(), Cocktail.Color.red);
         assertEquals(cocktail1.getName(),"Tequila Sunrise");
-        /**
-         * testing the List itself and the content as a String
-         */
         assertEquals(cocktail1.getLiquidList(), liquidList1);
         assertEquals(cocktail1.listToString(),"Tequilla0.0440.0Orange juice0.110.0Lemon juice0.010.0");
     }
