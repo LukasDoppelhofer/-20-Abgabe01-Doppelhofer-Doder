@@ -150,7 +150,8 @@ public class Cocktail extends Drink{
         return liquidList;
     }
     /**
-     * setter for liquidList
+     * setter for liquidList that calculates the new volume
+     * and alcohol percent
      *
      * @param liquidList new liquidList
      */
@@ -170,6 +171,7 @@ public class Cocktail extends Drink{
 
     /**
      * Getter of volume
+     *
      * @return volume of Cocktail
      */
     @Override
@@ -179,6 +181,7 @@ public class Cocktail extends Drink{
 
     /**
      * Getter of AlcoholPercent
+     *
      * @return alcohol percent of Cocktail
      */
     @Override
@@ -188,6 +191,7 @@ public class Cocktail extends Drink{
 
     /**
      * Getter of isAlcoholic
+     *
      * @return true if Cocktails alcohol percent > 0
      */
     @Override
@@ -198,6 +202,12 @@ public class Cocktail extends Drink{
             return false;
         }
     }
+
+    /**
+     * this method returns the content of the liquidList as a String
+     *
+     * @return String of Liquids on liquidList
+     */
     public String listToString() {
         String text = "";
         for (Liquid l : liquidList) {
