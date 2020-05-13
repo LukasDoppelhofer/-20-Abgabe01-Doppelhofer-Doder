@@ -46,14 +46,10 @@ public class Cocktail extends Drink{
      * this method sums up the volumes of all liquids on the liquidList
      *
      * @return volume of the cocktail
-     * @throws IllegalArgumentException if the volume of a liquid is negative
      */
-    private double calculateVolume() throws IllegalArgumentException{
+    private double calculateVolume() {
         double volume = 0;
         for (Liquid l : liquidList) {
-            if (l.getVolume() < 0) {
-                throw new IllegalArgumentException("Liquid " + liquidList.indexOf(l) + " has a negative volume!!!");
-            }
             volume += l.getVolume();
         }
         return volume;
@@ -109,10 +105,6 @@ public class Cocktail extends Drink{
         double alcoholVolume = 0;
         for(Liquid l: liquidList) {
             double liquidAlcohol = l.getAlcoholPercent();
-            if(liquidAlcohol > 100 || liquidAlcohol < 0) {
-                throw new IllegalArgumentException("Liquid " + liquidList.indexOf(l) +
-                        " contains an invalid percentage of alcohol!!!");
-            }
             alcoholVolume += l.getVolume() * liquidAlcohol / 100;
         }
 
