@@ -13,30 +13,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("Testing Cocktail implementation")
 
 public class CocktailTest {
-    private Cocktail cocktail1, cocktail2;
+    private Cocktail cocktail1;
+    private ArrayList<Liquid> liquidList;
+
     /**
-     * inits two cocktails
+     * inits a cocktails and an ArrayList
      */
     @Test
     @BeforeEach
     void setup() {
         // SETUP PHASE
-        ArrayList<Liquid> liquidList = new ArrayList<Liquid>();
+        liquidList = new ArrayList<>();
         liquidList.add(new Liquid("Tequilla",0.04,40));
         liquidList.add(new Liquid("Orange juice",0.11,0));
         liquidList.add(new Liquid("Lemon juice",0.01,0));
         cocktail1= new Cocktail("Tequila Sunrise", Cocktail.Color.red,liquidList);
-        cocktail1.setLiquidList(liquidList);
     }
     @Test
     @DisplayName("Testing constructor Cocktail")
     public void testConstructorAlcohol(){
-        ArrayList<Liquid> liquidList = new ArrayList<Liquid>();
-        liquidList.add(new Liquid("Tequilla",0.04,40));
-        liquidList.add(new Liquid("Orange juice",0.11,0));
-        liquidList.add(new Liquid("Lemon juice",0.01,0));
         assertEquals(cocktail1.getCocktailColor(), Cocktail.Color.red);
         assertEquals(cocktail1.getName(),"Tequila Sunrise");
+        /**
+         * testing the List itself and the content as a String
+         */
+        assertEquals(cocktail1.getLiquidList(), liquidList);
         assertEquals(cocktail1.listToString(),"Tequilla0.0440.0Orange juice0.110.0Lemon juice0.010.0");
     }
 
@@ -52,10 +53,10 @@ public class CocktailTest {
 
     }
     //@Test
-   // @DisplayName("Testing drink")
+    // @DisplayName("Testing drink")
     //public void testdrink(){
-      //  cocktail1.drink(5);
-        //assertEquals(cocktail1.drink(0);,10);
+    //  cocktail1.drink(5);
+    //assertEquals(cocktail1.drink(0);,10);
 
     //}
 
