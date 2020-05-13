@@ -7,6 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * This class tests the Liquid class
+ */
 
 @DisplayName("Testing Liquid implementation")
 public class LiquidTest {
@@ -22,6 +25,10 @@ public class LiquidTest {
 		lA = new Liquid("Wein", 0.125, 13);
 	}
 
+	/**
+	 * Tests the constructor of a non alcoholic liquid
+	 */
+
 	@Test
 	@DisplayName("Testing constructor non alcoholic")
 	public void testConstructorNonAlcoholic(){
@@ -29,6 +36,9 @@ public class LiquidTest {
 		assertEquals(lN.getVolume(), 0.3, 0.001);
 		assertEquals(lN.getAlcoholPercent(), 0, 0.001);
 	}
+	/**
+	 * Tests the constructor of an alcoholic liquid
+	 */
 	@Test
 	@DisplayName("Testing constructor alcoholic")
 	public void testConstructorAlcoholic(){
@@ -36,12 +46,18 @@ public class LiquidTest {
 		assertEquals(lA.getVolume(), 0.125, 0.001);
 		assertEquals(lA.getAlcoholPercent(), 13, 0.001);
 	}
+	/**
+	 * Tests the name setter of a liquid
+	 */
 	@Test
 	@DisplayName("Test name setter")
 	public void testNameSetter(){
 		lN.setName("Granderwasser");
 		assertEquals(lN.getName(), "Granderwasser");
 	}
+	/**
+	 * Tests the volume setter of a liquid
+	 */
 	@Test
 	@DisplayName("Testing volume setter")
 	public void testVolumeSetter(){
@@ -49,6 +65,9 @@ public class LiquidTest {
 		assertEquals(lN.getVolume(), 0.5, 0.001);
 
 	}
+	/**
+	 * Tests the alcoholPercent setter of a liquid
+	 */
 	@Test
 	@DisplayName("Testing alcoholPercent setters")
 	public void testAlcoholPercentSetter(){
