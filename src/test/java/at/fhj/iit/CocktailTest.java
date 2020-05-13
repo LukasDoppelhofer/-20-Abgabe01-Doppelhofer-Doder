@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Testing Cocktail implementation")
 
 public class CocktailTest {
-    private Cocktail cocktail1,cocktail2;
-    private ArrayList<Liquid> liquidList1, liquidList2;
+    private Cocktail cocktail1,cocktail2, cocktail3;
+    private ArrayList<Liquid> liquidList1, liquidList2, liquidList3;
 
     /**
      * inits a cocktails and an ArrayList
@@ -21,15 +21,20 @@ public class CocktailTest {
     @BeforeEach
     void setup() {
         // SETUP PHASE
-        liquidList2 = new ArrayList<>();
-        liquidList2.add(new Liquid("Absinth",1,91));
-        cocktail2= new Cocktail("Poison", Cocktail.Color.green, liquidList2);
-
         liquidList1 = new ArrayList<>();
         liquidList1.add(new Liquid("Tequilla",0.04,40));
         liquidList1.add(new Liquid("Orange juice",0.11,0));
         liquidList1.add(new Liquid("Lemon juice",0.01,0));
-        cocktail1= new Cocktail("Tequila Sunrise", Cocktail.Color.red, liquidList1);
+        cocktail1 = new Cocktail("Tequila Sunrise", Cocktail.Color.red, liquidList1);
+
+        liquidList2 = new ArrayList<>();
+        liquidList2.add(new Liquid("Absinth",1,91));
+        cocktail2 = new Cocktail("Poison", Cocktail.Color.green, liquidList2);
+
+        liquidList3 = new ArrayList<>();
+        liquidList3.add(new Liquid("Luft",0,0));
+        cocktail3 = new Cocktail("Poison", Cocktail.Color.clear, liquidList3);
+
     }
     @Test
     @DisplayName("Testing constructor Cocktail")
@@ -52,6 +57,7 @@ public class CocktailTest {
     @DisplayName("Testing calculate alcohol percent")
     public void testCalculateAlcoholPercent(){
         assertEquals(cocktail1.getAlcoholPercent(),10);
+        assertEquals(cocktail3.getAlcoholPercent(), 0);
 
     }
     @Test
@@ -69,12 +75,21 @@ public class CocktailTest {
     }
     @Test
     @DisplayName("Testing drink")
-    public void testDrink() throws DisinfectantException {
+    public void testDrink() throws IllegalArgumentException, DisinfectantException {
         cocktail1.drink(0.1);
         assertEquals(cocktail1.getVolume(),0.06,0.0001);
-
+        assertDoesNotThrow(()->{cocktail1.drink(0);}, "No exception should be thrown");
+        assertThrows(IllegalArgumentException.class, ()->{cocktail1.drink(-1);}, "You cannot drink a negative amount!!!");
+        assertThrows(IllegalArgumentException.class, ()->{cocktail1.drink(0.5);}, "You cannot drink more than what is in your cup!!! :-)");
         assertThrows(DisinfectantException.class, ()->{cocktail2.drink(0.5);},"User died!!! :(");
         assertDoesNotThrow(()->{cocktail1.drink(0.01);}, "No exception should be thrown");
+    }
+
+    @Test
+    @DisplayName("Testing isAlcoholic method")
+    public void testIsAlcoholic(){
+        assertEquals(cocktail1.isAlcoholic(), true);
+        assertEquals(cocktail3.isAlcoholic(), false);
     }
 
 }
