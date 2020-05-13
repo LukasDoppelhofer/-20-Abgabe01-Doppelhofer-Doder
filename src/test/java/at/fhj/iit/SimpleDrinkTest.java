@@ -1,5 +1,6 @@
 package at.fhj.iit;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,6 +33,13 @@ public class SimpleDrinkTest {
         assertEquals(sW.getVolume(),1.0,0.001);
         assertEquals(sW.getAlcoholPercent(),0);
         assertEquals(sW.getName(),"Water");
+    }
+
+    @Test
+    @DisplayName("Testing isAlcoholic() method")
+    public void testIsAlcoholic(){
+        assertEquals(sW.isAlcoholic(), false);
+        assertEquals(sB.isAlcoholic(), true);
     }
 
 }
