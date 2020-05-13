@@ -42,7 +42,6 @@ public class Cocktail extends Drink{
         this.volume = calculateVolume();
         this.alcoholPercent = calculateAlcoholPercent();
     }
-
     /**
      * this method sums up the volumes of all liquids on the liquidList
      *
@@ -134,7 +133,6 @@ public class Cocktail extends Drink{
     public Color getCocktailColor() {
         return cocktailColor;
     }
-
     /**
      * setter for cocktailColor
      *
@@ -143,7 +141,6 @@ public class Cocktail extends Drink{
     public void setCocktailColor(Color cocktailColor) {
         this.cocktailColor = cocktailColor;
     }
-
     /**
      * getter for liquidList
      *
@@ -152,7 +149,6 @@ public class Cocktail extends Drink{
     public ArrayList<Liquid> getLiquidList() {
         return liquidList;
     }
-
     /**
      * setter for liquidList
      *
