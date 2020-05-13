@@ -1,6 +1,6 @@
 # Software Configuration Management
 
-**Assignment: 01 Test Automation**
+## Assignment: 01 Test Automation
 
 This Repository contains the Drink project we had to work with.
 
